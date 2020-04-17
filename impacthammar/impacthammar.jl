@@ -8,6 +8,7 @@ xp = XLSX.readdata("./impacthammar/data1_impacthammar.xlsx", "Phase", "A2:D1002"
 xm_xaxis = xm[1:end,1]
 xp_xaxis = xp[1:end,1]
 
+
 mxval1, mxindx1 = findmax(xm[1:end,2]; dims=1)
 mxval2, mxindx3 = findmax(xm[1:end,3]; dims=1)
 mxval3, mxindx3 = findmax(xm[1:end,4]; dims=1)
