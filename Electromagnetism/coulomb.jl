@@ -19,18 +19,20 @@ X = [R;]'
 Y = [R;]'
 Mesh = [[j,i] for i=R, j=R]
 
-Src = [0 0]
-Sol = zeros(length(X),length(Y))
+Src = [5 0; -5 0]
+Charge = [+3, -1]
+Sol = fill([.0,.0], (20,20))
+
 for i in 1:length(Src[:,1])
-    Sol += map(x -> coulomb(Src[i,:],+10,x), Mesh) 
+    global Sol += map(x -> coulomb(Src[i,:],Charge[i],x), Mesh) 
 end
 
 Sol_x = map(x -> x[1], Sol)
 Sol_y = map(x -> x[2], Sol)
 
 fig = figure("pyplot_quiverplot",figsize=(10,10))
-q = quiver(X,Y,Sol_x,Sol_y)
+q = streamplot(X,Y,Sol_x,Sol_y)
+d = scatter(Src[:,1], Src[:,2], c=["r","b"], s=50)
 ax = gca()
-ax.quiverkey(q,X=0.07,Y = 0.05, U = 10,coordinates="figure", label="Quiver key, length = 10",labelpos = "E")
 PyPlot.title("Quiver Plot Example")
 
