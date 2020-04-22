@@ -36,3 +36,8 @@ function electrical_energy(charges_loc_array, charges_array)
     return (0.5)*U
 end
 
+
+# Line
+charge_loc = [collect(-1000:999) zeros(2000) zeros(2000)]
+charges_arr = [ones(2000);]
+loc = [0 1 0]
