@@ -16,3 +16,4 @@ xycoef2 = X \ y
 p = plot(x, y, c="k")
 p = plot(x, xycoef[1] .*x .+ xycoef[2], c="r")
 p = plot(x, xycoef2[1] .*x .+ xycoef2[2], c = "b")
+
