@@ -10,6 +10,8 @@ Base.@kwdef mutable struct Lorenz
     z::Float64 = 1
 end
 
+
+
 function step!(l::Lorenz)
     dx = l.σ * (l.y - l.x);         l.x += l.dt * dx
     dy = l.x * (l.ρ - l.z) - l.y;   l.y += l.dt * dy
@@ -34,3 +36,4 @@ plt = plot3d(
     step!(attractor)
     push!(plt, attractor.x, attractor.y, attractor.z)
 end every 10
+
