@@ -51,3 +51,4 @@ gp2 = GP(X,y,m,se)
 p1 = plot(gp2; title="Mean of GP")
 p2 = plot(gp2; var=true, title="Variance of GP", fill=true)
 plot(p1, p2; fmt=:png)
+
